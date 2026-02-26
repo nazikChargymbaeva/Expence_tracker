@@ -1,0 +1,16 @@
+.filterBar {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+
+.filterBar label {
+  margin-right: 5px;
+}
+
+.filterBar select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

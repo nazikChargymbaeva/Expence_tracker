@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+  font-family: Arial, sans-serif;
+}
+.reg {
+  display: flex;
+  height: 100vh;    
+  width: 100vw;    
+  gap: 50px;        
+}
+.reg> div  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 20px;           
+  box-sizing: border-box; 
+}
+.reg img {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+.reg input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+.reg button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  max-width: 530px;
+}
+.reg button:hover {
+  background-color: #45a049;
+}
+h1{
+  text-align: center;
+}
+h1 span {
+  color: #4caf50;
+}
+@media (max-width: 768px) {
+  .reg {
+    flex-direction: column; 
+    height: 100vh;          
+    gap: 0;                  
+  }
+
+  .reg img {
+    display: none;          
+  }
+  .reg > div {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1;                
+  }
+  .reg input, .reg button {
+    width: 90%;            
+    max-width: none;
+  }
+}
+.home {
+  width: 100%;
+  height: 90px;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+ 
+}
+
+/* Левая часть */
+.home div:first-child p {
+  margin: 0;
+  font-size: 14px;
+  color: #dfcd03;
+}
+
+.home div:first-child h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.home div:first-child h1 span {
+    color: #43a047;
+}
+/* Правая часть */
+.home div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.home button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.home button:hover {
+  background: #43a047;
+}
+
+.home h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .home div:last-child {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .home button {
+    display: none;
+  }
+}
