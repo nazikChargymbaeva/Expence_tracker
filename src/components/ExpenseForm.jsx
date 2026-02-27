@@ -1,12 +1,19 @@
-import React, { useState } from "react";
-import styles from "./ExpenseForm.module.css"
+import React, { useState, useEffect } from "react";
+import styles from "./ExpenseForm.module.css";
 
 function ExpenseForm(props) {
-
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredPrice, setEnteredPrice] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  const [enteredCategory, setEnteredCategory] = useState("")
+  const [enteredCategory, setEnteredCategory] = useState("");
+
+  // Сбрасываем форму при загрузке компонента
+  useEffect(() => {
+    setEnteredTitle("");
+    setEnteredPrice("");
+    setEnteredDate("");
+    setEnteredCategory("");
+  }, []);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -21,6 +28,7 @@ function ExpenseForm(props) {
 
     props.onAddExpense(expenseData);
 
+    // Очищаем форму после отправки
     setEnteredTitle("");
     setEnteredPrice("");
     setEnteredDate("");
@@ -28,17 +36,17 @@ function ExpenseForm(props) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} autoComplete="off">
       <div className={styles.Add}>
         <h3>Add Expense</h3>
 
         <div className={styles.fields_row}>
-
           <input
             type="text"
             value={enteredTitle}
             onChange={(e) => setEnteredTitle(e.target.value)}
             placeholder="Title"
+            autoComplete="off"
           />
 
           <select
@@ -56,16 +64,17 @@ function ExpenseForm(props) {
             value={enteredPrice}
             onChange={(e) => setEnteredPrice(e.target.value)}
             placeholder="Price"
+            autoComplete="off"
           />
 
           <input
             type="date"
             value={enteredDate}
             onChange={(e) => setEnteredDate(e.target.value)}
+            autoComplete="off"
           />
 
           <button type="submit">Add Expense</button>
-
         </div>
       </div>
     </form>
